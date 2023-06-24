@@ -31,22 +31,22 @@ Must be implemented: arrows to switch slides.
 
 ## 6. There is a list of differences on the second page
 
-## 7.
+## 7. On the third page you need to implement a slide
 
-## 8.
+## 8. This block should be shown 3 seconds after the person gets to this page
 
-## 9.
+## 9. You need to implement sending a form without reloading the page
 
-## 10.
+## 10. On page 5, implement the slider
 
-## 11.
+## 11. On page 6, you need to implement the sending of the form
 
-## 12.
+## 12. When you click on play - show clip
 
-## 13.
+## 13. Implement a small accordion
 
-## 14.
+## 14. When you click on the Download PDF button, the file will be downloaded
 
-## 15.
+## 15. modular project structure
 
-## 16. modular project structure
+## 16. No code duplication
