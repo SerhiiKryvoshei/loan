@@ -14,6 +14,19 @@ export class Slider {
       this.slideIndex = this.slides.length;
     }
 
+    try {
+      this.hanson.style.opacity = "0";
+      if (n === 3) {
+        this.hanson.classList.add("animated");
+        setTimeout(() => {
+          this.hanson.style.opacity = "1";
+          this.hanson.classList.add("slideInUp");
+        }, 3000);
+      } else {
+        this.hanson.classList.remove("slideInUp");
+      }
+    } catch (error) {}
+
     // this.slides.forEach((slide) => {
     //   return (slide.style.display = "none");
     // });
@@ -30,6 +43,10 @@ export class Slider {
   }
 
   render() {
+    try {
+      this.hanson = document.querySelector(".hanson");
+    } catch (error) {}
+
     this.btns.forEach((btn) => {
       btn.addEventListener("click", () => this.plusSlides(1));
 
