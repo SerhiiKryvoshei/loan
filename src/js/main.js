@@ -1,5 +1,5 @@
 import { MainSlider, MiniSlider } from "./modules/slider/index";
-import { VideoPlayer, Difference } from "./modules/index";
+import { VideoPlayer, Difference, Form } from "./modules/index";
 
 window.addEventListener("DOMContentLoaded", initApp);
 
@@ -37,4 +37,6 @@ function initApp() {
   const player = new VideoPlayer(".showup .play", ".overlay");
 
   new Difference(".officerold", ".officernew", ".officer__card-item");
+
+  new Form(".form", "https://jsonplaceholder.typicode.com/posts");
 }

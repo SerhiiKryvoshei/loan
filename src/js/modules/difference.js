@@ -11,7 +11,6 @@ export class Difference {
   }
 
   init() {
-    console.log("hey");
     this.hideItems(this.oldItems);
     this.hideItems(this.newItems);
 
