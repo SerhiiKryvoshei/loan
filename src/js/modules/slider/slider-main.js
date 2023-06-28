@@ -3,6 +3,7 @@ import { Slider } from "./slider";
 export class MainSlider extends Slider {
   constructor({ btns, container }) {
     super({ btns, container });
+    console.log(this);
   }
 
   showSlides(n) {
@@ -41,21 +42,66 @@ export class MainSlider extends Slider {
     this.showSlides((this.slideIndex += n));
   }
 
-  render() {
-    try {
-      this.hanson = document.querySelector(".hanson");
-    } catch (error) {}
+  bindTriggers() {
+    this.btns.forEach((item) => {
+      item.addEventListener("click", () => {
+        this.plusSlides(1);
+      });
 
-    this.btns.forEach((btn) => {
-      btn.addEventListener("click", () => this.plusSlides(1));
-
-      btn.parentNode.previousElementSibling.addEventListener("click", (e) => {
+      item.parentNode.previousElementSibling.addEventListener("click", (e) => {
         e.preventDefault();
         this.slideIndex = 1;
         this.showSlides(this.slideIndex);
       });
     });
 
-    this.showSlides(this.slideIndex);
+    document.querySelectorAll(".prevmodule").forEach((item) => {
+      item.addEventListener("click", (e) => {
+        e.stopPropagation();
+        e.preventDefault();
+        this.plusSlides(-1);
+      });
+    });
+
+    document.querySelectorAll(".nextmodule").forEach((item) => {
+      item.addEventListener("click", (e) => {
+        e.stopPropagation();
+        e.preventDefault();
+        this.plusSlides(1);
+      });
+    });
   }
+
+  render() {
+    if (this.container) {
+      try {
+        this.hanson = document.querySelector(".hanson");
+      } catch (e) {}
+
+      this.showSlides(this.slideIndex);
+      this.bindTriggers();
+    }
+  }
+
+  // renderOld() {
+  //   if (this.container) {
+  //     this.hanson = document.querySelector(".hanson");
+
+  //     this.btns.forEach((btn) => {
+  //       btn.addEventListener("click", (e) => {
+  //         e.stopPropagation();
+  //         e.preventDefault();
+  //         this.plusSlides(1);
+  //       });
+
+  //       btn.parentNode.previousElementSibling.addEventListener("click", (e) => {
+  //         e.preventDefault();
+  //         this.slideIndex = 1;
+  //         this.showSlides(this.slideIndex);
+  //       });
+  //     });
+
+  //     this.showSlides(this.slideIndex);
+  //   }
+  // }
 }
