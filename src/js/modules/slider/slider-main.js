@@ -3,7 +3,7 @@ import { Slider } from "./slider";
 export class MainSlider extends Slider {
   constructor({ btns, container }) {
     super({ btns, container });
-    console.log(this);
+    // console.log(this);
   }
 
   showSlides(n) {

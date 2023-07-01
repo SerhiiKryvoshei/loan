@@ -1,5 +1,11 @@
 import { MainSlider, MiniSlider } from "./modules/slider/index";
-import { VideoPlayer, Difference, Form } from "./modules/index";
+import {
+  VideoPlayer,
+  Difference,
+  Form,
+  ShowInfo,
+  Download,
+} from "./modules/index";
 
 window.addEventListener("DOMContentLoaded", initApp);
 
@@ -40,9 +46,14 @@ function initApp() {
     activeClass: "feed__item-active",
   });
 
-  const player = new VideoPlayer(".showup .play", ".overlay");
+  new VideoPlayer(".showup .play", ".overlay");
+  new VideoPlayer(".module__video-item .play", ".overlay");
 
   new Difference(".officerold", ".officernew", ".officer__card-item");
 
   new Form(".form", "https://jsonplaceholder.typicode.com/posts");
+
+  new ShowInfo(".plus__content");
+
+  new Download(".download");
 }
